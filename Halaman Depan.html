@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAHRI TOUR - Specialist Sumatera Barat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* Desain Dasar - Tema Merah Maroon & Emas */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: #f8fafc; color: #333; }
+        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+
+        /* Top Navigation Bar */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px; margin: 0 auto;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 20px;
+        }
+        
+        /* Box Logo Khusus Mengikuti Desain Logo Burung Anda */
+        .logo-box {
+            background: linear-gradient(135deg, #a71d1d 0%, #690909 100%);
+            padding: 8px 18px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ffd700;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .logo-title {
+            color: #ffd700;
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+        .logo-sub {
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+        
+        nav ul { list-style: none; display: flex; gap: 25px; }
+        nav ul li a { text-decoration: none; color: #4b5563; font-weight: 600; font-size: 15px; transition: 0.3s; }
+        nav ul li a:hover, nav ul li a.active { color: #a71d1d; }
+        .btn-whatsapp { background: #25d366; color: #fff; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
+
+        /* Hero Banner Utama */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1626125336093-605b410425a4?q=80&w=1200') no-repeat center center/cover;
+            padding: 100px 20px 140px 20px; text-align: center; color: white;
+        }
+        .hero-section h1 { font-size: 42px; font-weight: 700; margin-bottom: 12px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); color: #ffffff; }
+        .hero-section p { font-size: 20px; font-weight: 500; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); color: #ffd700; }
+
+        /* Kotak Pencarian Tiket / Sistem Booking (Ala Traveloka / Dwidaya) */
+        .search-container {
+            max-width: 1100px; margin: -70px auto 40px auto;
+            background: #ffffff; border-radius: 12px;
+            box-shadow: 0 10px 35px rgba(0,0,0,0.12); padding: 30px;
+            position: relative; z-index: 10; border: 1px solid #e2e8f0;
+        }
+        .search-tabs { display: flex; gap: 15px; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; }
+        .tab-btn { background: none; border: none; font-size: 16px; font-weight: 700; color: #64748b; cursor: pointer; padding: 8px 16px; display: flex; align-items: center; gap: 8px; border-radius: 6px; transition: 0.3s; }
+        .tab-btn.active { color: white; background-color: #a71d1d; }
+
+        .search-form { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: 20px; align-items: end; }
+        .form-group { display: flex; flex-direction: column; text-align: left; }
+        .form-group label { font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+        .form-group label i { color: #a71d1d; }
+        .form-group .input-box { border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; font-size: 14px; background: #f8fafc; color: #334155; font-weight: 500; outline: none; width: 100%; transition: 0.3s; }
+        .form-group .input-box:focus { border-color: #a71d1d; background: #fff; }
+        .btn-search { background: #ffd700; color: #690909; border: none; padding: 0 30px; font-weight: 700; font-size: 16px; border-radius: 8px; cursor: pointer; height: 45px; width: 100%; transition: 0.3s; box-shadow: 0 4px 6px rgba(255, 215, 0, 0.2); }
+        .btn-search:hover { background: #e6c200; transform: translateY(-2px); }
+
+        /* Promo Card */
+        .main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .promo-banner {
+            background: linear-gradient(135deg, #a71d1d 0%, #520606 100%);
+            border-radius: 12px; padding: 25px 35px; color: white;
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;
+            border-left: 6px solid #ffd700;
+        }
+        .promo-text h3 { font-size: 24px; margin-bottom: 5px; color: #ffd700; font-weight: 700; }
+        .promo-text p { font-size: 15px; opacity: 0.9; }
+        .btn-promo { background: #ffffff; color: #a71d1d; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 700; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
+        .btn-promo:hover { background: #ffd700; color: #690909; }
+
+        /* Destination Section */
+        .section-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
+        .section-subtitle { font-size: 16px; color: #64748b; margin-bottom: 30px; }
+        
+        .destination-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px; }
+        .destination-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: 0.3s; }
+        .destination-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+        .destination-img { height: 220px; position: relative; }
+        .destination-img img { width: 100%; height: 100%; object-fit: cover; }
+        .tag-category { position: absolute; top: 15px; left: 15px; background: #ffd700; color: #690909; padding: 5px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        
+        .destination-info { padding: 25px; }
+        .destination-info h3 { font-size: 19px; margin-bottom: 10px; color: #1e293b; font-weight: 700; }
+        .destination-info p { font-size: 14px; color: #627183; line-height: 1.6; margin-bottom: 20px; height: 65px; overflow: hidden; }
+        .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 18px; }
+        .price-label { font-size: 12px; color: #64748b; display: block; }
+        .price { font-size: 18px; font-weight: 700; color: #a71d1d; }
+        .btn-book { background: #690909; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
+        .btn-book:hover { background: #a71d1d; }
+
+        /* Footer */
+        footer { background: #4a0606; color: #ffffff; padding: 50px 20px 30px 20px; text-align: center; border-top: 4px solid #ffd700; }
+        footer p { opacity: 0.8; font-size: 15px; }
+        .footer-logo { font-size: 24px; font-weight: 700; color: #ffd700; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-box">
+                <div class="logo-title">FAHRI TOUR</div>
+                <div class="logo-sub">THE QUALITY OF TOUR</div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Beranda</a></li>
+                    <li><a href="#">Paket Wisata Sumbar</a></li>
+                    <li><a href="#">Rental Mobil BIM</a></li>
+                    <li><a href="#">Testimoni</a></li>
+                </ul>
+            </nav>
+            <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i> Chat WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <div class="hero-section">
+        <h1>Jelajahi Keindahan Ranah Minang</h1>
+        <p>Layanan Tour & Rental Mobil Terbaik Langsung dari Sumatera Barat</p>
+    </div>
+
+    <div class="search-container">
+        <div class="search-tabs">
+            <button class="tab-btn active"><i class="fa-solid fa-car"></i> Pesan Tiket Mobil / Sewa</button>
+            <button class="tab-btn"><i class="fa-solid fa-map-location-dot"></i> Paket Wisata Lokal</button>
+        </div>
+        
+        <div class="search-form">
+            <div class="form-group">
+                <label><i class="fa-solid fa-location-dot"></i> Titik Jemput (Sumbar)</label>
+                <select class="input-box">
+                    <option>Bandara Minangkabau (BIM)</option>
+                    <option>Kota Padang</option>
+                    <option>Kota Bukittinggi</option>
+                    <option>Kota Solok</option>
+                    <option>Payakumbuh</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-solid fa-location-arrow"></i> Destinasi Tujuan</label>
+                <select class="input-box">
+                    <option>Bukittinggi & Keliling</option>
+                    <option>Lembah Harau & Payakumbuh</option>
+                    <option>Dermaga Mandeh (Pessel)</option>
+                    <option>Danau Kembar / Alahan Panjang</option>
+                    <option>Batusangkar / Istano Pagaruyung</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><i class="fa-solid fa-calendar-days"></i> Tanggal Jalan</label>
+                <input type="date" class="input-box" value="2026-06-22">
+            </div>
+            <div class="form-group">
+                <label><i class="fa-solid fa-car-side"></i> Jenis Armada</label>
+                <select class="input-box">
+                    <option>Toyota Avanza (Max 5 Orang)</option>
+                    <option>Innova Reborn (Paling Nyaman)</option>
+                    <option>Toyota Hiace (Rombongan Keluarga)</option>
+                </select>
+            </div>
+            <div>
+                <button class="btn-search" onclick="alert('Pencarian Tiket Berhasil! Detail ketersediaan mobil dan driver akan langsung dikirim oleh CS Fahri Tour ke WhatsApp Anda.')">
+                    <i class="fa-solid fa-magnifying-glass"></i> Cek Tiket
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="promo-banner">
+            <div class="promo-text">
+                <h3>Kupon Pengguna Baru Fahri Tour <i class="fa-solid fa-ticket"></i></h3>
+                <p>Dapatkan potongan harga langsung Rp 50.000 untuk layanan jemput Bandara BIM minggu ini!</p>
+            </div>
+            <a href="https://wa.me/6281234567890" class="btn-promo" target="_blank">Ambil Slot</a>
+        </div>
+
+        <h2 class="section-title">Destinasi Terlaris di Sumatera Barat</h2>
+        <p class="section-subtitle">Rekomendasi rute terbaik dengan performa pelayanan sopir yang ramah dan profesional.</p>
+
+        <div class="destination-grid">
+            
+            <div class="destination-card">
+                <div class="destination-img">
+                    <span class="tag-category">Wisata Alam & Budaya</span>
+                    <img src="https://images.unsplash.com/photo-1570115084666-c30424564be7?q=80&w=400" alt="Jam Gadang Bukittinggi">
+                </div>
+                <div class="destination-info">
+                    <h3>Pesona Bukittinggi & Ngarai Sianok</h3>
+                    <p>Paket lengkap menyusuri keindahan kota sejuk Bukittinggi, berfoto di Jam Gadang, mengagumi Ngarai Sianok, dan kulineran seru.</p>
+                    <div class="card-footer">
+                        <div>
+                            <span class="price-label">Mulai dari</span>
+                            <span class="price">Rp 450.000</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890" class="btn-book" target="_blank">Pesan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="destination-img">
+                    <span class="tag-category">Wisata Bahari</span>
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=400" alt="Pantai Mandeh">
+                </div>
+                <div class="destination-info">
+                    <h3>Raja Ampat-nya Sumbar: Kawasan Mandeh</h3>
+                    <p>Jelajahi gugusan pulau nan indah di Pesisir Selatan. Termasuk boat keliling pulau, snorkeling di air jernih, dan lompat tebing.</p>
+                    <div class="card-footer">
+                        <div>
+                            <span class="price-label">Mulai dari</span>
+                            <span class="price">Rp 550.000</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890" class="btn-book" target="_blank">Pesan</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="destination-card">
+                <div class="destination-img">
+                    <span class="tag-category">Petualangan Alam</span>
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=400" alt="Lembah Harau">
+                </div>
+                <div class="destination-info">
+                    <h3>Eksotisme Tebing Lembah Harau</h3>
+                    <p>Saksikan langsung kemegahan dinding batu granit raksasa, segarnya air terjun alami, serta kunjungan ke Istano Basa Pagaruyung.</p>
+                    <div class="card-footer">
+                        <div>
+                            <span class="price-label">Mulai dari</span>
+                            <span class="price">Rp 500.000</span>
+                        </div>
+                        <a href="https://wa.me/6281234567890" class="btn-book" target="_blank">Pesan</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">FAHRI TOUR</div>
+        <p>&copy; 2026 FAHRI TOUR & TRAVEL - "The Quality Of Tour". Seluruh Hak Cipta Dilindungi.</p>
+        <p style="font-size: 13px; margin-top: 10px; opacity: 0.6;"><i class="fa-solid fa-location-dot"></i> Pusat Pelayanan: Padang, Sumatera Barat, Indonesia</p>
+    </footer>
+
+</body>
+</html>
