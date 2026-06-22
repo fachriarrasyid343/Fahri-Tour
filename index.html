@@ -3,277 +3,1192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAHRI TOUR - Specialist Sumatera Barat</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+    <title>Fahri Tour - The Quality Of Tour (Sumatera Barat)</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        /* Desain Dasar - Tema Merah Maroon & Emas */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-        body { background-color: #f8fafc; color: #333; }
-        h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+        :root {
+            --maroon-primary: #800000;
+            --maroon-dark: #4a0000;
+            --maroon-light: #b30000;
+            --gold-primary: #D4AF37;
+            --gold-light: #f3e5ab;
+            --gold-dark: #aa841e;
+            --dark-bg: #121212;
+            --light-bg: #fdfaf6;
+            --text-dark: #2c2c2c;
+            --text-light: #ffffff;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
 
-        /* Top Navigation Bar */
-        header {
-            background-color: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            position: sticky; top: 0; z-index: 1000;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        .nav-container {
-            max-width: 1200px; margin: 0 auto;
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 12px 20px;
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
         }
-        
-        /* Box Logo Khusus Mengikuti Desain Logo Burung Anda */
-        .logo-box {
-            background: linear-gradient(135deg, #a71d1d 0%, #690909 100%);
-            padding: 8px 18px;
-            border-radius: 6px;
+
+        h1, h2, h3, h4, .brand-font {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* TOP BAR */
+        .top-bar {
+            background-color: var(--maroon-dark);
+            color: var(--text-light);
+            font-size: 0.85rem;
+            padding: 8px 5%;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--gold-primary);
+        }
+
+        .top-bar .info-left a, .top-bar .info-right a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-right: 15px;
+            transition: var(--transition);
+        }
+
+        .top-bar .info-left a:hover, .top-bar .info-right a:hover {
+            color: var(--gold-primary);
+        }
+
+        /* HEADER & NAVIGATION (Traveloka & Dwidaya Style Minimalist) */
+        header {
+            background-color: var(--text-light);
+            padding: 15px 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-placeholder {
+            background: linear-gradient(135deg, var(--maroon-primary), var(--maroon-dark));
+            color: var(--gold-primary);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
             align-items: center;
             justify-content: center;
-            border: 2px solid #ffd700;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 1.4rem;
+            border: 2px solid var(--gold-primary);
+            box-shadow: 0 2px 10px rgba(128,0,0,0.3);
         }
-        .logo-title {
-            color: #ffd700;
-            font-size: 22px;
-            font-weight: 700;
+
+        .logo-text h1 {
+            font-size: 1.35rem;
+            color: var(--maroon-primary);
             letter-spacing: 1px;
-            line-height: 1.2;
+            line-height: 1.1;
         }
-        .logo-sub {
-            color: #ffffff;
-            font-size: 10px;
+
+        .logo-text span {
+            font-size: 0.75rem;
+            color: var(--gold-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
             font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--maroon-primary);
+            background-color: rgba(128, 0, 0, 0.05);
+        }
+
+        .btn-nav-wa {
+            background-color: #25D366;
+            color: white !important;
+            font-weight: 600 !important;
+            border-radius: 20px !important;
+            padding: 8px 18px !important;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-nav-wa:hover {
+            background-color: #20ba56 !important;
+        }
+
+        /* HERO BANNER (Dwidaya Luxury Slider Style) */
+        .hero-section {
+            position: relative;
+            height: 520px;
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)), url('https://images.unsplash.com/photo-1626847037657-fd3622613ce3?q=80&w=1600&auto=format&fit=crop') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-light);
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-section h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+            letter-spacing: 1px;
+        }
+
+        .hero-section h2 span {
+            color: var(--gold-primary);
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 650px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+            font-weight: 300;
+        }
+
+        /* SEARCH FILTER WIDGET (Akulturasi Dwidaya & Traveloka - Fokus Paket Tour Only) */
+        .search-container {
+            width: 85%;
+            max-width: 1050px;
+            background-color: var(--text-light);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            position: relative;
+            margin: -60px auto 50px auto;
+            z-index: 99;
+            border-bottom: 4px solid var(--gold-primary);
+        }
+
+        .search-tab-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .search-tab-header .active-tab {
+            background-color: var(--maroon-primary);
+            color: var(--text-light);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            align-items: flex-end;
+        }
+
+        .search-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .search-item label {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .search-item label i {
+            color: var(--maroon-primary);
+        }
+
+        .search-item select, .search-item input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            outline: none;
+            transition: var(--transition);
+            background-color: #ffff;
+        }
+
+        .search-item select:focus, .search-item input:focus {
+            border-color: var(--maroon-primary);
+            box-shadow: 0 0 0 3px rgba(128, 0, 0, 0.1);
+        }
+
+        .btn-search {
+            background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+            color: var(--maroon-dark);
+            border: none;
+            padding: 13px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            text-transform: uppercase;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-search:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(212, 175, 55, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* PROMO SECTION (Traveloka Banner Grid Model) */
+        .promo-section {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 25px;
+        }
+
+        .section-title-left h3 {
+            color: var(--maroon-primary);
+            font-size: 1.6rem;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title-left h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15%;
+            height: 70%;
+            width: 5px;
+            background-color: var(--gold-primary);
+            border-radius: 2px;
+        }
+
+        .section-title-left p {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        .promo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .promo-card {
+            background: linear-gradient(135deg, var(--maroon-primary), var(--maroon-dark));
+            border-radius: 10px;
+            padding: 22px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--gold-primary);
+            transition: var(--transition);
+        }
+
+        .promo-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .promo-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--gold-primary);
+            color: var(--maroon-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .promo-card h4 {
+            font-size: 1.25rem;
+            margin-bottom: 6px;
+            max-width: 80%;
+            color: var(--gold-light);
+        }
+
+        .promo-card p {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .promo-code {
+            display: inline-block;
+            background-color: rgba(255,255,255,0.15);
+            border: 1px dashed var(--gold-primary);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: var(--gold-primary);
+        }
+
+        /* TOUR PACKAGES GRID (Dwidaya & Traveloka Clean Cards) */
+        .tours-section {
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+        }
+
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .tour-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .tour-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+        .tour-img-wrapper {
+            position: relative;
+            height: 190px;
+            overflow: hidden;
+        }
+
+        .tour-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .tour-card:hover .tour-img-wrapper img {
+            transform: scale(1.08);
+        }
+
+        .tour-tag {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background-color: rgba(128, 0, 0, 0.85);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(212,175,55,0.4);
+        }
+
+        .tour-info {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .tour-location {
+            font-size: 0.8rem;
+            color: #777;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .tour-location i {
+            color: var(--maroon-primary);
+        }
+
+        .tour-title {
+            font-size: 1rem;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+            font-weight: 600;
+            line-height: 1.4;
+            height: 2.8em;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .tour-meta {
+            display: flex;
+            gap: 12px;
+            font-size: 0.8rem;
+            color: #555;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .tour-meta span i {
+            color: var(--gold-dark);
+            margin-right: 3px;
+        }
+
+        .tour-price-wrapper {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .price-label {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        .price-amount {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--maroon-primary);
+        }
+
+        .price-amount span {
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: #666;
+        }
+
+        .btn-book-tour {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--maroon-primary);
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 15px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn-book-tour:hover {
+            background-color: var(--maroon-dark);
+            color: var(--gold-primary);
+            border-color: var(--gold-primary);
+        }
+
+        /* WHY US SECTION */
+        .why-us {
+            background-color: var(--maroon-dark);
+            color: white;
+            padding: 50px 5%;
+            text-align: center;
+            position: relative;
+        }
+
+        .why-us h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--gold-primary);
+        }
+
+        .why-us p.subtitle {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-item {
+            padding: 20px;
+            background-color: rgba(255,255,255,0.05);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .why-item:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255,255,255,0.08);
+            border-color: var(--gold-primary);
+        }
+
+        .why-icon {
+            font-size: 2.2rem;
+            color: var(--gold-primary);
+            margin-bottom: 15px;
+        }
+
+        .why-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .why-item p {
+            font-size: 0.82rem;
+            opacity: 0.75;
+        }
+
+        /* TESTIMONIALS SECTION */
+        .testimonials {
+            padding: 60px 5%;
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .testi-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-top: 3px solid var(--maroon-primary);
+            text-align: left;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 0.85rem;
+            margin-bottom: 12px;
+        }
+
+        .testi-text {
+            font-size: 0.88rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .testi-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--maroon-primary);
+            font-weight: 700;
+            border: 1px solid var(--gold-primary);
+        }
+
+        .user-name h5 {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+        }
+
+        .user-name span {
+            font-size: 0.75rem;
+            color: #888;
+        }
+
+        /* FOOTER PRESTISIUS */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 50px 5% 20px 5%;
+            border-top: 4px solid var(--gold-primary);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 40px auto;
+        }
+
+        .footer-col h4 {
+            color: var(--gold-primary);
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        
-        nav ul { list-style: none; display: flex; gap: 25px; }
-        nav ul li a { text-decoration: none; color: #4b5563; font-weight: 600; font-size: 15px; transition: 0.3s; }
-        nav ul li a:hover, nav ul li a.active { color: #a71d1d; }
-        .btn-whatsapp { background: #25d366; color: #fff; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3); }
 
-        /* Hero Banner Utama */
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1626125336093-605b410425a4?q=80&w=1200') no-repeat center center/cover;
-            padding: 100px 20px 140px 20px; text-align: center; color: white;
+        .footer-col p {
+            font-size: 0.88rem;
+            opacity: 0.75;
+            line-height: 1.7;
         }
-        .hero-section h1 { font-size: 42px; font-weight: 700; margin-bottom: 12px; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); color: #ffffff; }
-        .hero-section p { font-size: 20px; font-weight: 500; text-shadow: 1px 1px 4px rgba(0,0,0,0.6); color: #ffd700; }
 
-        /* Kotak Pencarian Tiket / Sistem Booking (Ala Traveloka / Dwidaya) */
-        .search-container {
-            max-width: 1100px; margin: -70px auto 40px auto;
-            background: #ffffff; border-radius: 12px;
-            box-shadow: 0 10px 35px rgba(0,0,0,0.12); padding: 30px;
-            position: relative; z-index: 10; border: 1px solid #e2e8f0;
+        .footer-col ul {
+            list-style: none;
         }
-        .search-tabs { display: flex; gap: 15px; margin-bottom: 25px; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; }
-        .tab-btn { background: none; border: none; font-size: 16px; font-weight: 700; color: #64748b; cursor: pointer; padding: 8px 16px; display: flex; align-items: center; gap: 8px; border-radius: 6px; transition: 0.3s; }
-        .tab-btn.active { color: white; background-color: #a71d1d; }
 
-        .search-form { display: grid; grid-template-columns: repeat(4, 1fr) auto; gap: 20px; align-items: end; }
-        .form-group { display: flex; flex-direction: column; text-align: left; }
-        .form-group label { font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
-        .form-group label i { color: #a71d1d; }
-        .form-group .input-box { border: 1px solid #cbd5e1; padding: 12px; border-radius: 8px; font-size: 14px; background: #f8fafc; color: #334155; font-weight: 500; outline: none; width: 100%; transition: 0.3s; }
-        .form-group .input-box:focus { border-color: #a71d1d; background: #fff; }
-        .btn-search { background: #ffd700; color: #690909; border: none; padding: 0 30px; font-weight: 700; font-size: 16px; border-radius: 8px; cursor: pointer; height: 45px; width: 100%; transition: 0.3s; box-shadow: 0 4px 6px rgba(255, 215, 0, 0.2); }
-        .btn-search:hover { background: #e6c200; transform: translateY(-2px); }
-
-        /* Promo Card */
-        .main-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .promo-banner {
-            background: linear-gradient(135deg, #a71d1d 0%, #520606 100%);
-            border-radius: 12px; padding: 25px 35px; color: white;
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px;
-            border-left: 6px solid #ffd700;
+        .footer-col ul li {
+            margin-bottom: 10px;
         }
-        .promo-text h3 { font-size: 24px; margin-bottom: 5px; color: #ffd700; font-weight: 700; }
-        .promo-text p { font-size: 15px; opacity: 0.9; }
-        .btn-promo { background: #ffffff; color: #a71d1d; padding: 12px 24px; border-radius: 25px; text-decoration: none; font-weight: 700; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        .btn-promo:hover { background: #ffd700; color: #690909; }
 
-        /* Destination Section */
-        .section-title { font-size: 28px; font-weight: 700; margin-bottom: 8px; color: #0f172a; }
-        .section-subtitle { font-size: 16px; color: #64748b; margin-bottom: 30px; }
-        
-        .destination-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin-bottom: 60px; }
-        .destination-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border: 1px solid #e2e8f0; transition: 0.3s; }
-        .destination-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
-        .destination-img { height: 220px; position: relative; }
-        .destination-img img { width: 100%; height: 100%; object-fit: cover; }
-        .tag-category { position: absolute; top: 15px; left: 15px; background: #ffd700; color: #690909; padding: 5px 12px; border-radius: 6px; font-size: 12px; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        
-        .destination-info { padding: 25px; }
-        .destination-info h3 { font-size: 19px; margin-bottom: 10px; color: #1e293b; font-weight: 700; }
-        .destination-info p { font-size: 14px; color: #627183; line-height: 1.6; margin-bottom: 20px; height: 65px; overflow: hidden; }
-        .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f1f5f9; padding-top: 18px; }
-        .price-label { font-size: 12px; color: #64748b; display: block; }
-        .price { font-size: 18px; font-weight: 700; color: #a71d1d; }
-        .btn-book { background: #690909; color: white; padding: 10px 18px; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
-        .btn-book:hover { background: #a71d1d; }
+        .footer-col ul li a {
+            color: white;
+            opacity: 0.75;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: var(--transition);
+        }
 
-        /* Footer */
-        footer { background: #4a0606; color: #ffffff; padding: 50px 20px 30px 20px; text-align: center; border-top: 4px solid #ffd700; }
-        footer p { opacity: 0.8; font-size: 15px; }
-        .footer-logo { font-size: 24px; font-weight: 700; color: #ffd700; margin-bottom: 15px; }
+        .footer-col ul li a:hover {
+            opacity: 1;
+            color: var(--gold-primary);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 35px;
+            height: 35px;
+            background-color: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--gold-primary);
+            color: var(--maroon-dark);
+        }
+
+        .contact-info-list li {
+            font-size: 0.88rem;
+            opacity: 0.75;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .contact-info-list li i {
+            color: var(--gold-primary);
+            margin-top: 3px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+        }
+
+        /* FLOATING WHATSAPP BUTTON (Dwidaya & Small Business Custom Feature) */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: white;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 10000;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+            background-color: #20ba56;
+        }
+
+        /* RESPONSIVE DESIGN (Traveloka Grade) */
+        @media (max-width: 1024px) {
+            .search-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .tour-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+            .hero-section h2 {
+                font-size: 2rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .promo-grid {
+                grid-template-columns: 1fr;
+            }
+            .testi-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .search-grid {
+                grid-template-columns: 1fr;
+            }
+            .tour-grid {
+                grid-template-columns: 1fr;
+            }
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="nav-container">
-            <div class="logo-box">
-                <div class="logo-title">FAHRI TOUR</div>
-                <div class="logo-sub">THE QUALITY OF TOUR</div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#" class="active">Beranda</a></li>
-                    <li><a href="#">Paket Wisata Sumbar</a></li>
-                    <li><a href="#">Rental Mobil BIM</a></li>
-                    <li><a href="#">Testimoni</a></li>
-                </ul>
-            </nav>
-            <a href="https://wa.me/6281234567890" class="btn-whatsapp" target="_blank">
-                <i class="fab fa-whatsapp"></i> Chat WhatsApp
-            </a>
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="info-left">
+            <a href="tel:+628123456789"><i class="fa-solid fa-phone"></i> +62 812-3456-789</a>
+            <a href="mailto:info@fahritour.com"><i class="fa-solid fa-envelope"></i> info@fahritour.com</a>
         </div>
+        <div class="info-right">
+            <a href="#"><i class="fa-brands fa-instagram"></i> @fahritour</a>
+            <a href="#"><i class="fa-brands fa-facebook"></i> Fahri Tour</a>
+        </div>
+    </div>
+
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-placeholder">
+                <i class="fa-solid fa-plane-departure"></i>
+            </div>
+            <div class="logo-text">
+                <h1>FAHRI TOUR</h1>
+                <span>The Quality Of Tour</span>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Beranda</a></li>
+                <li><a href="#paket-tour">Paket Wisata</a></li>
+                <li><a href="#promo">Promo</a></li>
+                <li><a href="#tentang-kami">Tentang Kami</a></li>
+                <li><a href="https://wa.me/628123456789?text=Halo%20Fahri%20Tour,%20saya%20ingin%20tanya%20paket%20wisata" class="btn-nav-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat WA</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="hero-section">
-        <h1>Jelajahi Keindahan Ranah Minang</h1>
-        <p>Layanan Tour & Rental Mobil Terbaik Langsung dari Sumatera Barat</p>
-    </div>
+    <!-- HERO BANNER SECTION -->
+    <section class="hero-section">
+        <h2>Jelajahi Keindahan <span>Sumatera Barat</span></h2>
+        <p>Nikmati pengalaman liburan premium dan tak terlupakan bersama Fahri Tour dengan pelayanan bintang lima.</p>
+    </section>
 
-    <div class="search-container">
-        <div class="search-tabs">
-            <button class="tab-btn active"><i class="fa-solid fa-car"></i> Pesan Tiket Mobil / Sewa</button>
-            <button class="tab-btn"><i class="fa-solid fa-map-location-dot"></i> Paket Wisata Lokal</button>
+    <!-- SEARCH FILTER WIDGET (Fokus Tour Saja - Model Form Traveloka/Dwidaya) -->
+    <section class="search-container">
+        <div class="search-tab-header">
+            <div class="active-tab">
+                <i class="fa-solid fa-suitcase-rolling"></i> Cari Paket Tour Wisata
+            </div>
         </div>
-        
-        <div class="search-form">
-            <div class="form-group">
-                <label><i class="fa-solid fa-location-dot"></i> Titik Jemput (Sumbar)</label>
-                <select class="input-box">
-                    <option>Bandara Minangkabau (BIM)</option>
-                    <option>Kota Padang</option>
-                    <option>Kota Bukittinggi</option>
-                    <option>Kota Solok</option>
-                    <option>Payakumbuh</option>
+        <form class="search-grid" onsubmit="event.preventDefault(); alert('Pencarian disimulasikan! Menampilkan hasil tour terbaik...');">
+            <div class="search-item">
+                <label><i class="fa-solid fa-location-dot"></i> Destinasi Wisata</label>
+                <select required>
+                    <option value="">-- Pilih Destinasi --</option>
+                    <option value="padang">Padang Full City Tour</option>
+                    <option value="bukittinggi">Bukittinggi & Minangkabau Highlands</option>
+                    <option value="mandeh">Pulau Mandeh (Raja Ampat Sumbar)</option>
+                    <option value="mentawai">Mentawai Exotic Island</option>
+                    <option value="kelok9">Lembah Harau & Kelok 9</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label><i class="fa-solid fa-location-arrow"></i> Destinasi Tujuan</label>
-                <select class="input-box">
-                    <option>Bukittinggi & Keliling</option>
-                    <option>Lembah Harau & Payakumbuh</option>
-                    <option>Dermaga Mandeh (Pessel)</option>
-                    <option>Danau Kembar / Alahan Panjang</option>
-                    <option>Batusangkar / Istano Pagaruyung</option>
+            <div class="search-item">
+                <label><i class="fa-solid fa-calendar-days"></i> Bulan Keberangkatan</label>
+                <select>
+                    <option value="all">Semua Bulan</option>
+                    <option value="juni">Juni 2026</option>
+                    <option value="juli">Juli 2026</option>
+                    <option value="agustus">Agustus 2026</option>
+                    <option value="desember">Desember 2026</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label><i class="fa-solid fa-calendar-days"></i> Tanggal Jalan</label>
-                <input type="date" class="input-box" value="2026-06-22">
-            </div>
-            <div class="form-group">
-                <label><i class="fa-solid fa-car-side"></i> Jenis Armada</label>
-                <select class="input-box">
-                    <option>Toyota Avanza (Max 5 Orang)</option>
-                    <option>Innova Reborn (Paling Nyaman)</option>
-                    <option>Toyota Hiace (Rombongan Keluarga)</option>
+            <div class="search-item">
+                <label><i class="fa-solid fa-clock"></i> Durasi Paket</label>
+                <select>
+                    <option value="all">Semua Durasi</option>
+                    <option value="2d1n">2 Hari 1 Malam (2D1N)</option>
+                    <option value="3d2n">3 Hari 2 Malam (3D2N)</option>
+                    <option value="4d3n">4 Hari 3 Malam (4D3N)</option>
+                    <option value="one-day">One Day Tour (1 Hari)</option>
                 </select>
             </div>
-            <div>
-                <button class="btn-search" onclick="alert('Pencarian Tiket Berhasil! Detail ketersediaan mobil dan driver akan langsung dikirim oleh CS Fahri Tour ke WhatsApp Anda.')">
-                    <i class="fa-solid fa-magnifying-glass"></i> Cek Tiket
+            <div class="search-item">
+                <button type="submit" class="btn-search">
+                    <i class="fa-solid fa-magnifying-glass"></i> Cari Tour
                 </button>
             </div>
-        </div>
-    </div>
+        </form>
+    </section>
 
-    <div class="main-container">
+    <!-- PROMO BANNER SECTION (Traveloka Style) -->
+    <section class="promo-section" id="promo">
+        <div class="section-title-container">
+            <div class="section-title-left">
+                <h3>Promo Liburan Spesial</h3>
+                <p>Gunakan kode promo eksklusif ini saat melakukan pemesanan via WhatsApp.</p>
+            </div>
+        </div>
+        <div class="promo-grid">
+            <div class="promo-card">
+                <span class="promo-badge">Diskon 12%</span>
+                <h4>Pengguna Baru</h4>
+                <p>Khusus pemesanan paket tour Sumbar pertama Anda melalui WhatsApp official kami.</p>
+                <div class="promo-code">KODE: FAHRINEW26</div>
+            </div>
+            <div class="promo-card">
+                <span class="promo-badge">Hemat Up To 1.5jt</span>
+                <h4>Liburan Keluarga</h4>
+                <p>Dapatkan potongan harga spesial untuk pemesanan rombongan minimal 6 orang.</p>
+                <div class="promo-code">KODE: FAHRIFAMILY</div>
+            </div>
+            <div class="promo-card">
+                <span class="promo-badge">Hot Deal</span>
+                <h4>School Holiday Sale</h4>
+                <p>Berlaku khusus untuk periode liburan sekolah bulan Juni - Juli 2026 ini!</p>
+                <div class="promo-code">KODE: FAHRILIBURAN</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TOUR PACKAGES SECTION (Dwidaya Premium Grid Model) -->
+    <section class="tours-section" id="paket-tour">
+        <div class="section-title-container">
+            <div class="section-title-left">
+                <h3>Paket Wisata Unggulan</h3>
+                <p>Pilihan paket liburan terbaik Sumatera Barat terlaris dengan rating kepuasan 100%.</p>
+            </div>
+        </div>
         
-        <div class="promo-banner">
-            <div class="promo-text">
-                <h3>Kupon Pengguna Baru Fahri Tour <i class="fa-solid fa-ticket"></i></h3>
-                <p>Dapatkan potongan harga langsung Rp 50.000 untuk layanan jemput Bandara BIM minggu ini!</p>
+        <div class="tour-grid">
+            <!-- Tour 1 -->
+            <div class="tour-card">
+                <div class="tour-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1590055531835-f0ba2b1e60f7?q=80&w=600&auto=format&fit=crop" alt="Jam Gadang Bukittinggi">
+                    <span class="tour-tag">Best Seller</span>
+                </div>
+                <div class="tour-info">
+                    <div class="tour-location"><i class="fa-solid fa-location-dot"></i> Bukittinggi</div>
+                    <h4 class="tour-title">Paket Tour Bukittinggi - Istano Basa Pagaruyung Premium</h4>
+                    <div class="tour-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 3D2N</span>
+                        <span><i class="fa-solid fa-hotel"></i> Hotel Bintang 3/4</span>
+                    </div>
+                    <div class="tour-price-wrapper">
+                        <div class="price-label">Mulai dari</div>
+                        <div class="price-amount">Rp 1.850.000<span>/pax</span></div>
+                    </div>
+                    <a href="https://wa.me/628123456789?text=Halo%20Fahri%20Tour,%20saya%20tertarik%20dengan%20Paket%20Tour%20Bukittinggi%203D2N" class="btn-book-tour" target="_blank">Pesan via WA</a>
+                </div>
             </div>
-            <a href="https://wa.me/6281234567890" class="btn-promo" target="_blank">Ambil Slot</a>
+
+            <!-- Tour 2 -->
+            <div class="tour-card">
+                <div class="tour-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=600&auto=format&fit=crop" alt="Pulau Mandeh">
+                    <span class="tour-tag">Eksotis</span>
+                </div>
+                <div class="tour-info">
+                    <div class="tour-location"><i class="fa-solid fa-location-dot"></i> Pesisir Selatan</div>
+                    <h4 class="tour-title">Paket Wisata Bahari Pulau Mandeh - Raja Ampat Sumatera Barat</h4>
+                    <div class="tour-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 2D1N</span>
+                        <span><i class="fa-solid fa-ship"></i> Boat & Snorkeling</span>
+                    </div>
+                    <div class="tour-price-wrapper">
+                        <div class="price-label">Mulai dari</div>
+                        <div class="price-amount">Rp 1.450.000<span>/pax</span></div>
+                    </div>
+                    <a href="https://wa.me/628123456789?text=Halo%20Fahri%20Tour,%20saya%20tertarik%20dengan%20Paket%20Pulau%20Mandeh%202D1N" class="btn-book-tour" target="_blank">Pesan via WA</a>
+                </div>
+            </div>
+
+            <!-- Tour 3 -->
+            <div class="tour-card">
+                <div class="tour-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1626847037657-fd3622613ce3?q=80&w=600&auto=format&fit=crop" alt="Lembah Harau">
+                    <span class="tour-tag">Kultur & Alam</span>
+                </div>
+                <div class="tour-info">
+                    <div class="tour-location"><i class="fa-solid fa-location-dot"></i> Payakumbuh</div>
+                    <h4 class="tour-title">One Day Tour Lembah Harau, Kelok 9 & Danau Singkarak</h4>
+                    <div class="tour-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 1 Hari Full</span>
+                        <span><i class="fa-solid fa-utensils"></i> Kuliner Minang</span>
+                    </div>
+                    <div class="tour-price-wrapper">
+                        <div class="price-label">Mulai dari</div>
+                        <div class="price-amount">Rp 450.000<span>/pax</span></div>
+                    </div>
+                    <a href="https://wa.me/628123456789?text=Halo%20Fahri%20Tour,%20saya%20tertarik%20dengan%20One%20Day%20Tour%20Harau" class="btn-book-tour" target="_blank">Pesan via WA</a>
+                </div>
+            </div>
+
+            <!-- Tour 4 -->
+            <div class="tour-card">
+                <div class="tour-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop" alt="Mentawai">
+                    <span class="tour-tag">Adventure</span>
+                </div>
+                <div class="tour-info">
+                    <div class="tour-location"><i class="fa-solid fa-location-dot"></i> Kep. Mentawai</div>
+                    <h4 class="tour-title">Premium Exotic Mentawai Island Exploration & Surfing Tour</h4>
+                    <div class="tour-meta">
+                        <span><i class="fa-solid fa-calendar"></i> 4D3N</span>
+                        <span><i class="fa-solid fa-person-swimming"></i> Mentawai Tribe</span>
+                    </div>
+                    <div class="tour-price-wrapper">
+                        <div class="price-label">Mulai dari</div>
+                        <div class="price-amount">Rp 3.990.000<span>/pax</span></div>
+                    </div>
+                    <a href="https://wa.me/628123456789?text=Halo%20Fahri%20Tour,%20saya%20tertarik%20dengan%20Paket%20Mentawai%204D3N" class="btn-book-tour" target="_blank">Pesan via WA</a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <h2 class="section-title">Destinasi Terlaris di Sumatera Barat</h2>
-        <p class="section-subtitle">Rekomendasi rute terbaik dengan performa pelayanan sopir yang ramah dan profesional.</p>
-
-        <div class="destination-grid">
-            
-            <div class="destination-card">
-                <div class="destination-img">
-                    <span class="tag-category">Wisata Alam & Budaya</span>
-                    <img src="https://images.unsplash.com/photo-1570115084666-c30424564be7?q=80&w=400" alt="Jam Gadang Bukittinggi">
-                </div>
-                <div class="destination-info">
-                    <h3>Pesona Bukittinggi & Ngarai Sianok</h3>
-                    <p>Paket lengkap menyusuri keindahan kota sejuk Bukittinggi, berfoto di Jam Gadang, mengagumi Ngarai Sianok, dan kulineran seru.</p>
-                    <div class="card-footer">
-                        <div>
-                            <span class="price-label">Mulai dari</span>
-                            <span class="price">Rp 450.000</span>
-                        </div>
-                        <a href="https://wa.me/6281234567890" class="btn-book" target="_blank">Pesan</a>
-                    </div>
-                </div>
+    <!-- WHY US SECTION (Dwidaya Value Integration) -->
+    <section class="why-us" id="tentang-kami">
+        <h3>Mengapa Memilih Fahri Tour?</h3>
+        <p class="subtitle">Kami menjamin keamanan, kenyamanan, dan pengalaman otentik berkelas dunia di setiap destinasi.</p>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-icon"><i class="fa-solid fa-award"></i></div>
+                <h4>Layanan Terpercaya</h4>
+                <p>Ribuan klien perorangan, keluarga, dan korporat puas dengan manajemen profesional kami.</p>
             </div>
-
-            <div class="destination-card">
-                <div class="destination-img">
-                    <span class="tag-category">Wisata Bahari</span>
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=400" alt="Pantai Mandeh">
-                </div>
-                <div class="destination-info">
-                    <h3>Raja Ampat-nya Sumbar: Kawasan Mandeh</h3>
-                    <p>Jelajahi gugusan pulau nan indah di Pesisir Selatan. Termasuk boat keliling pulau, snorkeling di air jernih, dan lompat tebing.</p>
-                    <div class="card-footer">
-                        <div>
-                            <span class="price-label">Mulai dari</span>
-                            <span class="price">Rp 550.000</span>
-                        </div>
-                        <a href="https://wa.me/6281234567890" class="btn-book" target="_blank">Pesan</a>
-                    </div>
-                </div>
+            <div class="why-item">
+                <div class="why-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4>Aman & Berasuransi</h4>
+                <p>Seluruh perjalanan Anda dilindungi dengan standar keamanan tinggi seperti Dwidaya Tour.</p>
             </div>
-
-            <div class="destination-card">
-                <div class="destination-img">
-                    <span class="tag-category">Petualangan Alam</span>
-                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=400" alt="Lembah Harau">
-                </div>
-                <div class="destination-info">
-                    <h3>Eksotisme Tebing Lembah Harau</h3>
-                    <p>Saksikan langsung kemegahan dinding batu granit raksasa, segarnya air terjun alami, serta kunjungan ke Istano Basa Pagaruyung.</p>
-                    <div class="card-footer">
-                        <div>
-                            <span class="price-label">Mulai dari</span>
-                            <span class="price">Rp 500.000</span>
-                        </div>
-                        <a href="https://wa.me/6281234567890" class="btn-book" target="_blank">Pesan</a>
-                    </div>
-                </div>
+            <div class="why-item">
+                <div class="why-icon"><i class="fa-solid fa-utensils"></i></div>
+                <h4>Fasilitas Terbaik</h4>
+                <p>Hotel terpilih, transportasi prima ber-AC dingin, serta sajian kuliner Minang paling lezat.</p>
             </div>
-
+            <div class="why-item">
+                <div class="why-icon"><i class="fa-solid fa-comments"></i></div>
+                <h4>CS Responsif 24/7</h4>
+                <p>Tim admin kami siap membantu merencanakan itinerary custom impian Anda kapan saja.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <!-- TESTIMONIALS SECTION (Traveloka Style Review Grid) -->
+    <section class="testimonials">
+        <div class="section-title-left" style="text-align: center; margin-bottom: 10px;">
+            <h3 style="display: inline-block;">Apa Kata Mereka?</h3>
+        </div>
+        <p style="color: #666; font-size: 0.95rem;">Ulasan jujur langsung dari pelanggan setia Fahri Tour.</p>
+        <div class="testi-grid">
+            <div class="testi-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testi-text">"Pelayanan Fahri Tour luar biasa rapi seperti biro tour besar Traveloka. Tour guide-nya ramah, sangat paham spot foto terbaik di Bukittinggi dan Lembah Harau!"</p>
+                <div class="testi-user">
+                    <div class="user-avatar">A</div>
+                    <div class="user-name">
+                        <h5>Ahmad Hendra</h5>
+                        <span>Jakarta (Keluarga)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testi-text">"Paket Pulau Mandeh seru banget! Speedboat aman, perlengkapan snorkeling lengkap, dan makan siangnya enak sekali di pinggir pulau. Recommended!"</p>
+                <div class="testi-user">
+                    <div class="user-avatar">S</div>
+                    <div class="user-name">
+                        <h5>Siti Rahma</h5>
+                        <span>Bandung (Grup Kantor)</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <div class="stars">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <p class="testi-text">"Sangat fleksibel bisa custom itinerary sendiri sesuai budget. Komunikasi via WhatsApp sangat cepat dan solutif. Sukses selalu Fahri Tour!"</p>
+                <div class="testi-user">
+                    <div class="user-avatar">R</div>
+                    <div class="user-name">
+                        <h5>Roni Wijaya</h5>
+                        <span>Medan (Backpacker)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER PRESTISIUS -->
     <footer>
-        <div class="footer-logo">FAHRI TOUR</div>
-        <p>&copy; 2026 FAHRI TOUR & TRAVEL - "The Quality Of Tour". Seluruh Hak Cipta Dilindungi.</p>
-        <p style="font-size: 13px; margin-top: 10px; opacity: 0.6;"><i class="fa-solid fa-location-dot"></i> Pusat Pelayanan: Padang, Sumatera Barat, Indonesia</p>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4 style="color: white; font-size: 1.3rem; margin-bottom: 12px;">FAHRI TOUR</h4>
+                <p style="margin-bottom: 20px;">Menyediakan solusi liburan premium, aman, dan berkelas di Sumatera Barat dengan akulturasi model layanan profesional tepercaya.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Layanan Tour</h4>
+                <ul>
+                    <li><a href="#paket-tour">Tour Bukittinggi</a></li>
+                    <li><a href="#paket-tour">Tour Pulau Mandeh</a></li>
+                    <li><a href="#paket-tour">Tour Lembah Harau</a></li>
+                    <li><a href="#paket-tour">Custom Itinerary</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Tautan Penting</h4>
+                <ul>
+                    <li><a href="#">Syarat & Ketentuan</a></li>
+                    <li><a href="#">Cara Pemesanan</a></li>
+                    <li><a href="#promo">Promo Terkini</a></li>
+                    <li><a href="#tentang-kami">Hubungi Kami</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Kantor Pusat</h4>
+                <ul class="contact-info-list">
+                    <li><i class="fa-solid fa-map-location-dot"></i> Jl. Khatib Sulaiman No. 34, Kota Padang, Sumatera Barat</li>
+                    <li><i class="fa-solid fa-phone"></i> +62 812-3456-789</li>
+                    <li><i class="fa-solid fa-clock"></i> Senin - Minggu (08.00 - 22.00 WIB)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Fahri Tour - The Quality Of Tour. All Rights Reserved. Inspired by Dwidaya & Traveloka Model Layout.</p>
+        </div>
     </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/628123456789?text=Halo%20Fahri%20Tour,%20saya%20ingin%20tanya%20paket%20wisata%20Sumatera%20Barat" class="floating-wa" target="_blank" title="Hubungi Kami Via WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
